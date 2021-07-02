@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">News Bulletin</string>
+    <string name="tab_text1">Bulletins</string>
+    <string name="tab_text2">Nepal</string>
+    <string name="tab_text3">World</string>
+    <string name="tab_text4">Sports</string>
+    <string name="tab_text5">Tech</string>
+    <string name="tab_text6">Entertainment</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <!-- TODO: Remove or change this placeholder text -->
+</resources>

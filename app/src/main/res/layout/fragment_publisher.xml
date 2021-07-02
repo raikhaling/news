@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+    <include
+        layout="@layout/toolbar_layout"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Top sites"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:textAlignment="center"
+        android:layout_marginBottom="15dp"/>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_marginLeft="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nepal"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <GridView
+                android:id="@+id/nepal"
+                android:layout_width="wrap_content"
+                android:layout_height="350dp"
+                android:horizontalSpacing="15dp"
+                android:numColumns="3"
+                android:padding="15dp"
+                android:verticalSpacing="15dp" />
+
+            <TextView
+                android:layout_marginLeft="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="World"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <GridView
+                android:layout_width="wrap_content"
+                android:layout_height="350dp"
+                android:numColumns="3"
+                android:padding="15dp"
+                android:id="@+id/world"
+                android:horizontalSpacing="15dp"
+                android:verticalSpacing="15dp"/>
+
+            <TextView
+                android:layout_marginLeft="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nepali Language"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <GridView
+                android:layout_width="wrap_content"
+                android:layout_height="350dp"
+                android:numColumns="3"
+                android:padding="15dp"
+                android:id="@+id/nepali"
+                android:horizontalSpacing="15dp"
+                android:verticalSpacing="15dp"/>
+
+            <TextView
+                android:layout_marginLeft="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sports"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <GridView
+                android:layout_width="wrap_content"
+                android:layout_height="350dp"
+                android:numColumns="3"
+                android:padding="15dp"
+                android:id="@+id/sports"
+                android:horizontalSpacing="15dp"
+                android:verticalSpacing="15dp"/>
+
+            <TextView
+                android:layout_marginLeft="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tech"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <GridView
+                android:layout_width="wrap_content"
+                android:layout_height="350dp"
+                android:numColumns="3"
+                android:padding="15dp"
+                android:id="@+id/tech"
+                android:horizontalSpacing="15dp"
+                android:verticalSpacing="15dp"/>
+
+            <TextView
+                android:layout_marginLeft="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Entertainment"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <GridView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numColumns="3"
+                android:padding="15dp"
+                android:id="@+id/entertainment"
+                android:horizontalSpacing="15dp"
+                android:verticalSpacing="15dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
