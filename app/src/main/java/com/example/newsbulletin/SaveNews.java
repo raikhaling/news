@@ -21,7 +21,6 @@ public class SaveNews extends SQLiteOpenHelper {
     public static final String COL_6 = "Date";
     public static final String COL_7 = "Saved_date";
     public static final String COL_8 = "Link";
-    public String recommended = "";
 
 
     public SaveNews(@Nullable Context context) {
@@ -40,18 +39,15 @@ public class SaveNews extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO recommendation (category, value ) VALUES('sports', 0)");
         db.execSQL("INSERT INTO recommendation (category, value ) VALUES('tech', 0)");
         db.execSQL("INSERT INTO recommendation (category, value ) VALUES('entertainment', 0)");
-
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         db.execSQL("DROP TABLE IF EXISTS " + Table_name);
         db.execSQL("DROP TABLE IF EXISTS recommendation");
-
     }
 
-    public boolean insertData(String Img_src, String Source_logo, String Title,
-                              String Publisher, String Date, String Saved_date, String Link) {
+    public boolean insertData(String Img_src, String Source_logo, String Title, String Publisher, String Date, String Saved_date, String Link){
         SQLiteDatabase db = this.getReadableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_2, Img_src);
@@ -65,19 +61,19 @@ public class SaveNews extends SQLiteOpenHelper {
         return result != -1;
     }
 
-    public Cursor getAllData() {
+    public Cursor getAllData(){
         SQLiteDatabase db = this.getReadableDatabase();
         return db.rawQuery("SELECT *FROM " + Table_name, null);
     }
 
-    public Cursor getRecommended() {
-        SQLiteDatabase db = this.getReadableDatabase();
-        return db.rawQuery("SELECT *FROM recommendation", null);
+    public void deleteData(String Img_src){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(Table_name, "Image_src= ?", new String[] {Img_src});
     }
 
-    public void deleteData(String Img_src) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(Table_name, "Image_src= ?", new String[]{Img_src});
+    public Cursor getParticularData(String image){
+        SQLiteDatabase db = this.getReadableDatabase();
+        return db.rawQuery("SELECT *FROM " + Table_name + " WHERE Img_src="+ image, null);
     }
 
     public void updateScore(String name, int point) {
@@ -87,10 +83,9 @@ public class SaveNews extends SQLiteOpenHelper {
         db.update("recommendation", contentValues,"category=?", new String[]{name});
     }
 
-    public Cursor getParticularData(String image) {
+    public Cursor getRecommended() {
         SQLiteDatabase db = this.getReadableDatabase();
-        return db.rawQuery("SELECT *FROM " + Table_name + " WHERE Img_src=" + image,
-                null);
+        return db.rawQuery("SELECT *FROM recommendation", null);
     }
 
 }

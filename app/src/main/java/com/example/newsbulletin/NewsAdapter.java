@@ -100,7 +100,7 @@ public class NewsAdapter extends BaseAdapter implements ActivityCompat.OnRequest
         TextView tvPublisher = view.findViewById(R.id.textview_3);
 
 
-        if (currentNews.imgsrc != "") {
+        if (!currentNews.imgsrc.equals("")) {
             Picasso.with(context).load(currentNews.imgsrc).placeholder(R.drawable.placeholder).into(iv1);
         }
         Picasso.with(context).load(currentNews.source_logo).placeholder(R.drawable.placeholder).into(iv2);
